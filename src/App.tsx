@@ -6,7 +6,6 @@ import { useAuth } from "./contexts/AuthContext"
 
 function App() {
   const { user } = useAuth();
-  console.log(user)
   return (
     <Router>
       <Routes>

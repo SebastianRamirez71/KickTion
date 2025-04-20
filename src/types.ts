@@ -1,11 +1,13 @@
 export interface User {
   id?: string;
-  created_at: Date;
+  kick_id: string;
   email: string;
   username: string;
-  is_stremear?: boolean;
-  updated_at: Date;
   is_moderator?: boolean;
+  is_stremear?: boolean;
+  created_at: Date;
+  updated_at: Date;
+
 }
 
 export interface Post {
@@ -40,8 +42,11 @@ export interface Votes {
 }
 
 export interface KickUser {
-  email: string;
-  name: string;
-  profile_picture: string;
-  user_id: number;
+  data: Array<{
+    user_id: string;
+    email: string;
+    name: string;
+    profile_picture: string;
+  }>;
+  message: string;
 }

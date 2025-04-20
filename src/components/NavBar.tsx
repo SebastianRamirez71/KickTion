@@ -16,7 +16,7 @@ const Navbar = ({ toggleSidebar, toggleLoginModal }: NavbarProps) => {
           <div>
             <button
               onClick={toggleSidebar}
-              className="p-2 rounded-md hover:bg-gray-800 focus:outline-none"
+              className="p-2 rounded-md hover:bg-gray-800 focus:outline-none cursor-pointer"
               aria-label="Open menu"
             >
               <Menu className="h-6 w-6" />
@@ -33,7 +33,7 @@ const Navbar = ({ toggleSidebar, toggleLoginModal }: NavbarProps) => {
           <div>
             <button
               onClick={toggleLoginModal}
-              className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 focus:outline-none"
+              className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 focus:outline-none cursor-pointer"
               aria-label="Login"
             >
               <User className="h-5 w-5" />

@@ -20,7 +20,7 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
           <div className="flex items-center justify-between">
             <h2 className="text-xl font-bold text-[#53FC18]">KickTion</h2>
             <button onClick={onClose} className="p-2 rounded-md hover:bg-gray-800" aria-label="Close menu">
-              <X className="h-5 w-5 text-gray-400" />
+              <X className="h-5 w-5 text-gray-400 cursor-pointer" />
             </button>
           </div>
         </div>

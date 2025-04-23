@@ -24,7 +24,7 @@ export interface Post {
 }
 
 export interface Posts {
-  id: string;
+  id?: string;
   stremear_id: string;
   title: string;
   description: string | null;

@@ -30,27 +30,13 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
             <li>
               <Link to="/" className="flex items-center p-3 rounded-md hover:bg-gray-800 text-white" onClick={onClose}>
                 <Home className="h-5 w-5 mr-3" />
-                Inicio
+                Home
               </Link>
             </li>
             <li>
-              <Link
-                to="/about"
-                className="flex items-center p-3 rounded-md hover:bg-gray-800 text-white"
-                onClick={onClose}
-              >
-                <Compass className="h-5 w-5 mr-3" />
-                Explorar
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/contact"
-                className="flex items-center p-3 rounded-md hover:bg-gray-800 text-white"
-                onClick={onClose}
-              >
-                <Heart className="h-5 w-5 mr-3" />
-                Siguiendo
+              <Link to="/posts" className="flex items-center p-3 rounded-md hover:bg-gray-800 text-white" onClick={onClose}>
+                <Home className="h-5 w-5 mr-3" />
+                Posteos
               </Link>
             </li>
           </ul>

@@ -67,7 +67,23 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const checkKickSession = async () => {
     try {
-      const { accessToken, refreshToken } = getStoredTokens();
+      const { accessToken, refreshToken, tokenExpiry } = getStoredTokens();
+      
+      // Verificar si el token está expirado
+      if (accessToken && tokenExpiry) {
+        const expiryTime = Number(tokenExpiry);
+        if (Date.now() >= expiryTime) {
+          if (refreshToken) {
+            await kickService.refreshToken(refreshToken);
+          } else {
+            clearStoredTokens();
+            setUser(null);
+            setIsLoading(false);
+            return;
+          }
+        }
+      }
+
       if (!accessToken) {
         setIsLoading(false);
         return;
@@ -195,8 +211,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       
       clearStoredTokens();
       setUser(null);
+      setIsLoading(false); // Asegurar que el estado de carga se resetea
     } catch (error) {
       console.error('Error logging out:', error);
+      setIsLoading(false); // Asegurar que el estado de carga se resetea incluso en caso de error
       throw error;
     }
   };

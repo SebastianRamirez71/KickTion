@@ -1,6 +1,6 @@
 import { KICK_CONFIG } from '../config/kick';
 import { KickUser } from '../types';
-import { getStoredTokens, setStoredTokens } from '../utils/auth';
+import { setStoredTokens } from '../utils/auth';
 
 export const kickService = {
   async getUserData(token: string): Promise<KickUser> {
